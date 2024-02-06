@@ -8,3 +8,11 @@
 
 
 // TODO: function definitions here for ls2
+
+/**
+ * This is just an example. Delete this before 
+ * submission.
+ */
+void example(int* x) {
+    *x = thisIsGlobal;
+} 
