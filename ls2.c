@@ -14,8 +14,6 @@
  *      Author: Tyler Higashihara
  */
 
-#define INDENT "    "
-
 // Function definitions here for ls2
 
 /**
