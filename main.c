@@ -4,21 +4,29 @@
 #include "ls2.h"
 
 /**
- * Main function
- * Usage: ls2 <path> [exact-match-pattern]
+ * main.c
+ * 
+ * Main program to execute ls2 under 2 modes or none.
+ *
+ * Created on: Feb 8, 2024
+ * Author: Tyler Higashihara
+ * 
  */
 int main(int argc, char* argv[]) {
-	// stack stores the lines to print out
-	stack_t *s = initstack();
+    // Check number of command-line arguments
+    if (argc < 2 || argc > 3) {
+        fprintf(stderr, "Usage: %s <path> [exact-match-pattern]\n", argv[0]);
+        return EXIT_FAILURE;
+    }
 
-	push(s, "Hello1");
-	push(s, "Hello2");
-	push(s, "Hello3");
+    // Mode 1
+    if (argc == 2) {
+        listPath(argv[1], NULL, TRUE); 
+    } 
+    // Mode 2
+    else {
+        listPath(argv[1], argv[2], TRUE);
+    }
 
-	// print stack
-	printstack(s);
-
-	// free up stack
-	freestack(s);
-	return 0;
+    return EXIT_SUCCESS;
 }

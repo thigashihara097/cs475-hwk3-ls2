@@ -7,11 +7,10 @@
 #define FALSE 0
 #define INDENT "    "
 
-// TODO: Any global variables go below
-int thisIsGlobal = 10;  // delete before submission
-
-// TODO: Function declarations go below
-void example(int*); // delete before submission
-
+// Function declarations
+char* concatenatePaths(const char* path1, const char* path2);
+void printIndentedPath(const char *path, int depth);
+void listPathRecursive(const char *path, const char *search, int depth);
+void listPath(const char *path, const char *search, int isRecursive);
 
 #endif
